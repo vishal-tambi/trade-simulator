@@ -1,106 +1,159 @@
-# Trade Simulator
+# 📈 Trade Simulator  
+A high-performance desktop application that simulates cryptocurrency trading by estimating **transaction costs**, **market impact**, and **slippage** in real-time using **Level 2 orderbook data** and advanced quantitative models.
 
-A high-performance trade simulator that leverages real-time market data to estimate transaction costs and market impact for cryptocurrency exchanges.
+---
 
-## Features
+## 🚀 Demo  
+📦 *Coming soon: packaged build and video walkthrough*
 
-- Real-time L2 orderbook data processing
-- Market impact calculation using Almgren-Chriss model
-- Slippage estimation using linear and quantile regression
-- Maker/Taker proportion prediction
-- Performance metrics and latency monitoring
-- Modern Qt-based user interface
+---
 
-## Requirements
+## 🧩 Features
 
-- C++17 compatible compiler
-- CMake 3.10 or higher
-- Qt 5.15 or higher
-- OpenSSL
-- vcpkg (for package management)
+✅ **Real-time L2 Orderbook Data**  
+📊 Live updates from cryptocurrency exchanges via WebSockets  
 
-## Dependencies
+✅ **Market Impact Estimation**  
+📐 Uses the **Almgren-Chriss model** for both temporary and permanent market impact  
 
-- websocketpp (WebSocket client)
-- nlohmann_json (JSON parsing)
-- Qt (GUI framework)
-- OpenSSL (TLS support)
+✅ **Slippage Prediction**  
+📉 Combines **linear** and **quantile regression** to estimate slippage based on market depth  
 
-## Building
+✅ **Maker vs Taker Prediction**  
+🔄 Predicts trade type proportions using **logistic regression** on historical and live data  
 
-1. Install vcpkg and required packages:
+✅ **Performance Monitoring**  
+⏱️ Tracks latency, throughput, and system performance  
+
+✅ **Modern Desktop UI**  
+🖥️ Built with **Qt 5.15+**, offering a responsive, real-time dashboard  
+
+---
+
+## ⚙️ System Requirements
+
+| Component | Version |
+|----------|---------|
+| C++      | 17+     |
+| CMake    | 3.10+   |
+| Qt       | 5.15+   |
+| OpenSSL  | Latest  |
+| OS       | Cross-platform (Windows/Linux/macOS) |
+
+---
+
+## 📦 Dependencies
+
+- `websocketpp` – WebSocket client for real-time data  
+- `nlohmann_json` – JSON parsing  
+- `Qt` – GUI framework  
+- `OpenSSL` – TLS/SSL encryption  
+- `vcpkg` – For managing C++ dependencies  
+
+---
+
+## 🛠️ Building from Source
+
+### 1️⃣ Install vcpkg and Dependencies:
 ```bash
 git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
 ./bootstrap-vcpkg.sh
 ./vcpkg install qt5-base openssl websocketpp nlohmann-json
-```
-
-2. Build the project:
-```bash
+2️⃣ Build the Project:
+bash
+Copy
+Edit
 mkdir build
 cd build
 cmake ..
 cmake --build .
-```
+🧪 Usage Guide
+Launch the application
 
-## Usage
+Select exchange & trading pair
 
-1. Launch the application
-2. Select the exchange and trading pair
-3. Enter the desired quantity and other parameters
-4. Click "Connect" to start receiving real-time market data
-5. Monitor the output parameters in real-time
+Enter quantity and parameters
 
-## Performance Optimization
+Connect to the data stream
 
-The system implements several optimization techniques:
+Observe real-time impact, slippage & performance
 
-1. Memory Management
-   - Efficient data structures for orderbook management
-   - Smart pointers for resource management
-   - Lock-free algorithms where possible
+⚡ Performance Optimization
+🔧 Memory Management
+Lock-free structures
 
-2. Network Communication
-   - Asynchronous WebSocket handling
-   - Efficient message parsing
-   - Connection pooling
+Smart pointers
 
-3. Data Structure Selection
-   - Deque for orderbook levels
-   - Hash maps for quick lookups
-   - Optimized sorting algorithms
+Cache-friendly containers
 
-4. Thread Management
-   - Dedicated thread for WebSocket communication
-   - UI updates on main thread
-   - Thread-safe data structures
+🌐 Networking
+Asynchronous WebSocket handling
 
-5. Model Efficiency
-   - Cached calculations
-   - Incremental updates
-   - Efficient regression algorithms
+Efficient JSON parsing
 
-## Model Implementation
+TLS-secured connections
 
-### Almgren-Chriss Model
-The market impact model considers both temporary and permanent impact:
-- Temporary impact: η * Q
-- Permanent impact: γ * Q
-where η and γ are model parameters and Q is the order quantity.
+🧮 Model Optimizations
+Cached impact formulas
 
-### Slippage Estimation
-Uses a combination of:
-- Linear regression for trend analysis
-- Quantile regression for extreme value prediction
-- Real-time orderbook analysis
+Incremental regression updates
 
-### Maker/Taker Proportion
-Implements a logistic regression model based on:
-- Current spread
-- Orderbook depth
-- Historical trading patterns
+Real-time event queue
 
-## License
+📘 Model Details
+📊 Almgren-Chriss Market Impact Model
+Temporary Impact: η * Q
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+Permanent Impact: γ * Q
+
+Q: Order quantity | η, γ: Model constants
+
+📉 Slippage Estimation
+Linear regression for trends
+
+Quantile regression for outliers
+
+Based on L2 orderbook state
+
+🔁 Maker/Taker Prediction
+Logistic Regression model
+
+Inputs: Spread, Depth, Historical trade data
+
+🧰 Tech Stack
+Layer	Tech Stack
+Language	C++17
+Build System	CMake
+GUI	Qt 5.15+
+Realtime Data	WebSocket (websocketpp)
+Security	OpenSSL
+Data Parsing	nlohmann_json
+Package Manager	vcpkg
+
+📋 To-Do / Future Enhancements
+ Add support for multiple exchanges
+
+ Integrate with real execution APIs for live trading
+
+ Extend modeling to multi-asset simulations
+
+ Export results to CSV/Excel
+
+ Add unit and integration tests
+
+👨‍💻 Author
+Vishal Tambi
+💻 C++ Developer | Quant Enthusiast | System Optimizer
+🔗 LinkedIn
+📧 vishaltambi@example.com
+📂 GitHub: vishal-tambi
+
+🛡️ License
+MIT License. See LICENSE for more details.
+
+css
+Copy
+Edit
+
+Let me know if you want the author/contact info updated or a badge section added!
