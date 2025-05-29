@@ -55,105 +55,90 @@ A high-performance desktop application that simulates cryptocurrency trading by 
 ## 🛠️ Building from Source
 
 ### 1️⃣ Install vcpkg and Dependencies:
-```bash
+```# 🔧 Install vcpkg and Dependencies
 git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
 ./bootstrap-vcpkg.sh
 ./vcpkg install qt5-base openssl websocketpp nlohmann-json
-2️⃣ Build the Project:
-bash
-Copy
-Edit
+
+# 🛠️ Build the Project
 mkdir build
 cd build
 cmake ..
 cmake --build .
+
+
 🧪 Usage Guide
-Launch the application
+1. Launch the application  
+2. Select exchange & trading pair  
+3. Enter quantity and parameters  
+4. Connect to the data stream  
+5. Observe real-time impact, slippage & performance  
 
-Select exchange & trading pair
-
-Enter quantity and parameters
-
-Connect to the data stream
-
-Observe real-time impact, slippage & performance
 
 ⚡ Performance Optimization
-🔧 Memory Management
-Lock-free structures
 
-Smart pointers
+🔧 Memory Management  
+- Lock-free structures  
+- Smart pointers  
+- Cache-friendly containers  
 
-Cache-friendly containers
+🌐 Networking  
+- Asynchronous WebSocket handling  
+- Efficient JSON parsing  
+- TLS-secured connections  
 
-🌐 Networking
-Asynchronous WebSocket handling
+🧮 Model Optimizations  
+- Cached impact formulas  
+- Incremental regression updates  
+- Real-time event queue  
 
-Efficient JSON parsing
-
-TLS-secured connections
-
-🧮 Model Optimizations
-Cached impact formulas
-
-Incremental regression updates
-
-Real-time event queue
 
 📘 Model Details
-📊 Almgren-Chriss Market Impact Model
-Temporary Impact: η * Q
 
-Permanent Impact: γ * Q
+📊 Almgren-Chriss Market Impact Model  
+- Temporary Impact: η * Q  
+- Permanent Impact: γ * Q  
+- Q: Order quantity | η, γ: Model constants  
 
-Q: Order quantity | η, γ: Model constants
+📉 Slippage Estimation  
+- Linear regression for trends  
+- Quantile regression for outliers  
+- Based on L2 orderbook state  
 
-📉 Slippage Estimation
-Linear regression for trends
+🔁 Maker/Taker Prediction  
+- Logistic Regression model  
+- Inputs: Spread, Depth, Historical trade data  
 
-Quantile regression for outliers
-
-Based on L2 orderbook state
-
-🔁 Maker/Taker Prediction
-Logistic Regression model
-
-Inputs: Spread, Depth, Historical trade data
 
 🧰 Tech Stack
-Layer	Tech Stack
-Language	C++17
-Build System	CMake
-GUI	Qt 5.15+
-Realtime Data	WebSocket (websocketpp)
-Security	OpenSSL
-Data Parsing	nlohmann_json
-Package Manager	vcpkg
+
+Layer            Tech Stack                
+---------------  --------------------------
+Language         C++17                    
+Build System     CMake                    
+GUI              Qt 5.15+                 
+Realtime Data    WebSocket (websocketpp)  
+Security         OpenSSL                  
+Data Parsing     nlohmann_json            
+Package Manager  vcpkg                    
+
 
 📋 To-Do / Future Enhancements
- Add support for multiple exchanges
+- [ ] Add support for multiple exchanges  
+- [ ] Integrate with real execution APIs for live trading  
+- [ ] Extend modeling to multi-asset simulations  
+- [ ] Export results to CSV/Excel  
+- [ ] Add unit and integration tests  
 
- Integrate with real execution APIs for live trading
-
- Extend modeling to multi-asset simulations
-
- Export results to CSV/Excel
-
- Add unit and integration tests
 
 👨‍💻 Author
-Vishal Tambi
-💻 C++ Developer | Quant Enthusiast | System Optimizer
-🔗 LinkedIn
-📧 vishaltambi@example.com
-📂 GitHub: vishal-tambi
+Vishal Tambi  
+💻 C++ Developer | Quant Enthusiast | System Optimizer  
+🔗 LinkedIn  
+📧 vishaltambi@example.com  
+📂 GitHub: vishal-tambi  
+
 
 🛡️ License
 MIT License. See LICENSE for more details.
-
-css
-Copy
-Edit
-
-Let me know if you want the author/contact info updated or a badge section added!
